@@ -9,17 +9,6 @@ import UIKit
 
 class MainViewPresenter: NSObject {
     
-//    var notifi: Void = NotificationCenter.default.addObserver(self, selector: #selector(showOfflineDeviceUI(notification:)), name: NSNotification.Name.connectivityStatus, object: nil)
-    
-    @objc func showOfflineDeviceUI(notification: NSNotification) {
-            if NetworkMonitor.shared.isConnected {
-                print("Connected")
-                //randomFoto(completion: completion)
-            } else {
-                print("Not connected")
-            }
-        }
-    
     var photos = [UnsplashPhoto]()
     private var networkDataRandom = NetworkServiceRandom()
     
@@ -28,21 +17,12 @@ class MainViewPresenter: NSObject {
     
     func randomFoto(completion: @escaping (()->())) {
         
-        //NetworkMonitor.shared.startMonitoring()
-        
-       // while !NetworkMonitor.shared.isConnected {
-            
-        //}
         self.networkDataRandom.fetchImages { searchRandom in
             
             guard let fetchedPhotos = searchRandom else { return }
             self.photos = fetchedPhotos
             completion()
         }
-        
-        //NetworkMonitor.shared.stopMonitoring()
-        
-
     }
     
     func searchBar(searchText: String, completion: @escaping (()->())) {
@@ -72,5 +52,4 @@ extension MainViewPresenter: UICollectionViewDataSource {
         cell.unsplashPhoto = unsplashPhoto
         return cell
     }
-    
 }

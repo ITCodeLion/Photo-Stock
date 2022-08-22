@@ -13,11 +13,9 @@ class NetworkService {
         
         let  parameters = self.prepareParameters(searchTerm: searchTerm)
         let  url = self.url(params: parameters)
-        print(url)
         var request = URLRequest(url: url)
         request.allHTTPHeaderFields = prepareHeaders()
         request.httpMethod = "get"
-        print(request)
         let task = createDataTask(from: request, completion: completion)
         task.resume()
     }
@@ -54,4 +52,3 @@ class NetworkService {
         }
     }
 }
-

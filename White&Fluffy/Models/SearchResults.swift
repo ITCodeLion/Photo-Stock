@@ -23,19 +23,10 @@ struct UnsplashPhoto: Decodable, Equatable, ModelProtocol {
     let height: Int
     let urls: [URLKind.RawValue:String]
     
-    
     let description: String?
-    //let user: [userInfo.RawValue: Any]
+
     let downloads: Int?
     let user: UserInfo
-    //let location: String?
-    
-    //    enum userInfo: Any {
-    //        case username
-    //        case name
-    //        //case first_name
-    //        //case last_name
-    //    }
     
     enum URLKind: String {
         case raw

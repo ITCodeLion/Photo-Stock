@@ -17,7 +17,6 @@ protocol DVPresenterProtocol {
     func prepareModel()
     func addPhoto()
     func deletePhoto()
-    
 }
 
 class DetailViewPresenter: DVPresenterProtocol {
@@ -48,7 +47,6 @@ class DetailViewPresenter: DVPresenterProtocol {
                 if element.urlRegular == model.regularUrl {
                     
                     indexRealm = index
-                    print ("disLike pressed = ", likePressed)
                     
                     RealmService.shared.deleteData(items[indexRealm])
                 }
@@ -71,7 +69,7 @@ class DetailViewPresenter: DVPresenterProtocol {
         let newPhoto = FavouriteBase()
         newPhoto.urlRegular = model.regularUrl
         newPhoto.urlSmall = model.smallUrl
-        newPhoto.like = true //model.likePressed
+        newPhoto.like = true
         newPhoto.downloads.value = Int(model.downloads) ?? nil
         
         newPhoto.createdAt = model.date
@@ -103,7 +101,6 @@ class DetailViewPresenter: DVPresenterProtocol {
                         indexRealm = index
                         let items = RealmService.shared.getData(FavouriteBase.self)
                         likePressed = items[index].like
-                        print ("Like pressed = ", likePressed)
                     }
                 }
             }

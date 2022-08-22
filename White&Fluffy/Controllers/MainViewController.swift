@@ -44,7 +44,6 @@ class MainViewController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
-        //searchController.searchBar.delegate = presenter
         searchController.searchBar.searchTextField.backgroundColor = .white
     }
     
@@ -56,8 +55,8 @@ class MainViewController: UIViewController {
         photoCollection.delegate = self
         photoCollection.register(PhotosCell.self, forCellWithReuseIdentifier: PhotosCell.identifier)
         photoCollection.translatesAutoresizingMaskIntoConstraints = false
-        //photoCollection.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        //photoCollection.contentInsetAdjustmentBehavior = .automatic
+        photoCollection.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        photoCollection.contentInsetAdjustmentBehavior = .automatic
         photoCollection.backgroundColor = .clear
         return photoCollection
     }()
@@ -109,14 +108,13 @@ class MainViewController: UIViewController {
         refreshControl.attributedTitle = attributedTitle
 
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        photoCollection.addSubview(refreshControl) // not required when using UITableViewController
-        
+        photoCollection.addSubview(refreshControl)
 
         layout()
     }
     
     @objc func refresh(_ sender: AnyObject) {
-       // Code to refresh table view
+
         self.spinner.startAnimating()
         presenter.randomFoto{ [weak self] in
             self?.photoCollection.reloadData()

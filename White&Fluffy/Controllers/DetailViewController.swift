@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
     }
     
     func photoUpdated(model: DetailModel) {
-        print("modeeel", model.likePressed)
+
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
             
             self.contentView.likeButton.transform = CGAffineTransform(scaleX: 2, y: 2)
@@ -121,20 +121,17 @@ class DetailViewController: UIViewController {
 // MARK: - DetailViewDelegate
 extension DetailViewController: DetailViewDelegate {
     
-    func tapSender(photos: [UIImage]) { //, sender: UIBarButtonItem)
-        print("&&&&????")
-        print("start", #function)
+    func tapSender(photos: [UIImage]) {
         
         let shareController = UIActivityViewController(activityItems: photos, applicationActivities: nil)
-        //tyItems: selectedImages, applicationActivities: nil)
+        
         shareController.completionWithItemsHandler = { _, bool, _, _ in
             if bool {
-                //self.refresh()
+
             }
         }
-        //shareController.popoverPresentationController?.barButtonItem = sender
+
         shareController.popoverPresentationController?.permittedArrowDirections = .any
         present(shareController, animated: true, completion: nil)
-        print(#function)
     }
 }

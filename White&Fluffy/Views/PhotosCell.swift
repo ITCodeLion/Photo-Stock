@@ -34,7 +34,6 @@ class PhotosCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupPhoto()
-        
     }
     
     private func setupPhoto() {

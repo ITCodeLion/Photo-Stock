@@ -8,7 +8,7 @@
 import UIKit
 
 protocol DetailViewDelegate: AnyObject {
-    func tapSender(photos: [UIImage])//, sender: UIBarButtonItem)
+    func tapSender(photos: [UIImage])
 }
 
 class DetailView: UIView {
@@ -95,14 +95,13 @@ class DetailView: UIView {
                 self.photoView.heightAnchor.constraint(equalToConstant: ratio).isActive = true
             }
         }
-        authorLabel.text = "Author:" + model.author
-        descriptionLabel.text = "Description:" + model.description
-        dateLabel.text = "Date:" + model.date
-        locationLabel.text = "Location:" + model.location
-        downloadsLabel.text = "Downloads:" + model.downloads
+        authorLabel.text = "Author: " + model.author
+        descriptionLabel.text = "Description: " + model.description
+        dateLabel.text = "Date: " + model.date
+        locationLabel.text = "Location: " + model.location
+        downloadsLabel.text = "Downloads: " + model.downloads
         likeButton.tintColor = model.likePressed ? .red : .systemGray5
     }
-    
     
     private func layout(){
         
@@ -186,7 +185,7 @@ class DetailView: UIView {
     @objc private func tapSendButton(sender: UIBarButtonItem) {
         guard let photo = photoView.image else { return }
         let sendPhotos = [photo]
-        print(photo)
-        delegate?.tapSender(photos: sendPhotos) //, sender: sender)
+
+        delegate?.tapSender(photos: sendPhotos)
     }
 }

@@ -58,10 +58,6 @@ extension NetworkServiceRandom {
         self.requestRandom() { (data, error) in
             if let error = error {
                 print("Error received requesting data: \(error.localizedDescription)")
-//                while error.localizedDescription == "The Internet connection appears to be offline" {
-//                    
-//                }
-                
                 completion(nil)
             }
             
