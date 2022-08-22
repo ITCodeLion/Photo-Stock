@@ -92,6 +92,7 @@ class DetailViewPresenter: DVPresenterProtocol {
             guard let info = favouritePhoto else { return }
             
             let downloadFoto = info.downloads.value != nil ? String(info.downloads.value!) : "-"
+            let createdAt = Formatter.formatDate(info.createdAt)
             
             var indexRealm: Int? = nil
             
@@ -105,7 +106,7 @@ class DetailViewPresenter: DVPresenterProtocol {
                 }
             }
             
-            modelDetail = DetailModel(author: info.user, description: info.descriptionPhoto, location: info.location, date: info.createdAt, downloads: downloadFoto, fotoUrl: info.urlRegular, likePressed: likePressed, indexRealmBase: indexRealm, regularUrl: info.urlRegular, smallUrl: info.urlSmall)
+            modelDetail = DetailModel(author: info.user, description: info.descriptionPhoto, location: info.location, date: createdAt, downloads: downloadFoto, fotoUrl: info.urlRegular, likePressed: likePressed, indexRealmBase: indexRealm, regularUrl: info.urlRegular, smallUrl: info.urlSmall)
             
         case is UnsplashPhoto:
             guard let infoModel = model as? UnsplashPhoto else { return }
@@ -115,7 +116,7 @@ class DetailViewPresenter: DVPresenterProtocol {
             let nickname = info.user.username ?? "-"
             let description =  info.description ?? "-"
             let place = info.user.location ?? "-"
-            let createdAt = info.created_at ?? "-"
+            let createdAt = Formatter.formatDate(info.created_at ?? "-")
             let loaded = info.downloads != nil ? String(info.downloads!) : "-"
             var indexPhoto: Int? = nil
             

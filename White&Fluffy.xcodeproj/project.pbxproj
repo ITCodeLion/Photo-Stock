@@ -30,6 +30,7 @@
 		DF86EAA22897D88A001F69A8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EAA12897D88A001F69A8 /* DetailView.swift */; };
 		DF86EAA428992C09001F69A8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EAA328992C09001F69A8 /* DetailViewController.swift */; };
 		DF86EAA628ACF72F001F69A8 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86EAA528ACF72F001F69A8 /* NetworkMonitor.swift */; };
+		DF8D54C928B38D2900DD07E7 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8D54C828B38D2900DD07E7 /* Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		DF86EAA12897D88A001F69A8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DF86EAA328992C09001F69A8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DF86EAA528ACF72F001F69A8 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		DF8D54C828B38D2900DD07E7 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		F1746F8CC6010A73BD6B1262 /* Pods_White_Fluffy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_White_Fluffy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 			children = (
 				DF378EA3285CF55400FD6A2D /* Info.plist */,
 				DF63AFC3286CC58300D0010C /* RealmService.swift */,
+				DF8D54C728B38CE700DD07E7 /* Helpers */,
 				DF58F262288D5BBF00406349 /* Presenter */,
 				DF378EA9285CF8EA00FD6A2D /* App */,
 				DF378EB5285F944F00FD6A2D /* Models */,
@@ -201,6 +204,14 @@
 				DF378EB8285FB71900FD6A2D /* Extension_UIView.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		DF8D54C728B38CE700DD07E7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DF8D54C828B38D2900DD07E7 /* Formatter.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +344,7 @@
 				DF378E98285CF55200FD6A2D /* SceneDelegate.swift in Sources */,
 				DF58F268288D8F5600406349 /* DetailViewPresenter.swift in Sources */,
 				DF58F264288D702C00406349 /* MainViewPresenter.swift in Sources */,
+				DF8D54C928B38D2900DD07E7 /* Formatter.swift in Sources */,
 				DF86EAA428992C09001F69A8 /* DetailViewController.swift in Sources */,
 				DF86EAA628ACF72F001F69A8 /* NetworkMonitor.swift in Sources */,
 				DF63AFC4286CC58400D0010C /* RealmService.swift in Sources */,
